@@ -6,7 +6,7 @@
 
   define("SAUCEPRICE", 0.04);
 
-  //Colecting what the user ordered
+  //Collecting what the user ordered
   $bucketChoice = $_POST['bucket-choice'];
   
   $sauceChoice = $_POST['sauce-choice'];
@@ -52,7 +52,7 @@
 ?>
 <?php
 
-//if stament for the value of drink
+//if statement for the value of drink
   if ($drinkChoice == "Small Drink") {
     $drinkPrice = 1.25;
   }
@@ -68,7 +68,7 @@
 ?>
 <?php
 
-//if stament for the value of fries
+//if statement for the value of fries
   if ($friesChoice == "small fries") {
     $friesPrice = 2.00;
   }
@@ -93,6 +93,7 @@
 	// Calculation user order
   $subTotal = ($bucketPrice * $userMain) + ($drinkPrice * $userSideDrink) + ($friesPrice * $userSideFries) + (SAUCEPRICE * $sauceAmount);
   $total = $subTotal * TAX_RATE;
+  $tax = $subTotal * 0.13;
   $discountedTotal = $total - ($total * DISCOUNT);
  }
 ?>
@@ -103,9 +104,9 @@
   //Display information back to user
   if ($userMain > 0 && $userSideDrink >= 0 && $userSideFries >= 0 && $sauceAmount >= 0) {
   echo "Your order is " . $userMain . " box(s) of " . $bucketChoice . ", " . $userSideDrink . " " .  $drinkChoice . ", " . $userSideFries . " " . $friesChoice . ", " . $sauceAmount . " " . $sauceChoice . " sauce." .
-    "<br>The subtotal of your order is $ " . round($subTotal, 2) .
-  "<br>Your order will cost you $ " . round($total, 2) .
-"<br>If you had the discount you would only have to pay $ " . round($discountedTotal, 2);
+    "<br>The subtotal of your order is $ " .round($subTotal, 2) .
+  "<br>Your order will cost you $ " .round($total, 2) . "<br>The tax is $ " .round($tax,2) .
+"<br>If you had the discount you would only have to pay $ " .round($discountedTotal, 2);
     }
   else {
     echo "Please enter a valid order.";
