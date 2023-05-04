@@ -84,7 +84,7 @@
 ?>
 
 <?php
- if ($userMain == "") {
+ if ($userMain == "" || $sauceAmount == "" || $userSideDrink == "" || $userSideFries == "") {
    echo "";
  }
    
@@ -101,7 +101,7 @@
   <?php 
 
   //Display information back to user
-  if ($userMain > 0) {
+  if ($userMain > 0 && $userSideDrink >= 0 && $userSideFries >= 0 && $sauceAmount >= 0) {
   echo "Your order is " . $userMain . " box(s) of " . $bucketChoice . ", " . $userSideDrink . " " .  $drinkChoice . ", " . $userSideFries . " " . $friesChoice . ", " . $sauceAmount . " " . $sauceChoice . " sauce." .
     "<br>The subtotal of your order is $ " . round($subTotal, 2) .
   "<br>Your order will cost you $ " . round($total, 2) .
