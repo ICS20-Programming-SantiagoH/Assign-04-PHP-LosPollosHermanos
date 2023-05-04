@@ -102,7 +102,7 @@
 
   //Display information back to user
   if ($userMain > 0) {
-  echo "Your order is " . $userMain . " box(s) of " . $bucketChoice . ", " . $userSideDrink . " " .  $userDrink . ", " . $userSideFries . " " . $userFries . ", " . $sauceAmount . " " . $userSauce . " sauce." .
+  echo "Your order is " . $userMain . " box(s) of " . $bucketChoice . ", " . $userSideDrink . " " .  $drinkChoice . ", " . $userSideFries . " " . $friesChoice . ", " . $sauceAmount . " " . $sauceChoice . " sauce." .
     "<br>The subtotal of your order is $ " . round($subTotal, 2) .
   "<br>Your order will cost you $ " . round($total, 2) .
 "<br>If you had the discount you would only have to pay $ " . round($discountedTotal, 2);
